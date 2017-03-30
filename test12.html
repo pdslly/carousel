@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{padding:0;margin:0;}
+	#show{width:100%;height:800px;}
+	</style>
+</head>
+<body>
+	<div id="show" class="Carousel">
+	</div>
+	<script type="text/javascript" src="./carousel/carousel.js"></script>
+	<script type="text/javascript">
+		var el = document.querySelector("div#show");
+		var opt = {
+			duration: 3000,
+			autoplay: true,
+			resources: [{
+				url: "./imgs/01.jpg",
+				src: "#0",
+				animMode: "bbb"
+			},{
+				url: "./imgs/02.jpg",
+				src: "#1",
+				animMode: "default"
+			},{
+				url: "./imgs/03.jpg",
+				src: "#2",
+				animMode: "bbb"
+			},{
+				url: "./imgs/04.jpg",
+				src: "#3",
+				animMode: "aaa"
+			},{
+				url: "./imgs/05.jpg",
+				src: "#3",
+				animMode: "default"
+			},{
+				url: "./imgs/06.jpg",
+				src: "#3",
+				animMode: "bbb"
+			},{
+				url: "./imgs/07.jpg",
+				src: "#3",
+				animMode: "aaa"
+			}] 	
+		};
+		Carousel.bind(el);
+		var caro = new Carousel(opt);
+		caro.init();
+		window.addEventListener("resize", function(){
+			caro.init();
+		})
+	</script>
+</body>
+</html>
